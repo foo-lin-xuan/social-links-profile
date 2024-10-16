@@ -51,6 +51,9 @@ h6 {
   --16px: 1rem;
   --24px: 1.5rem;
   --40px: 2.5rem;
+  --327px: 20.438rem;
+  --384px: 24rem;
+  --456px: 28.5rem;
 
   --color-green: hsl(75, 94%, 57%);
   --color-white: hsl(0, 0%, 100%);
@@ -83,7 +86,7 @@ main {
 
 .card {
   margin: auto;
-  max-width: 327px;
+  max-width: var(--327px);
   background-color: var(--color-grey-800);
   display: flex;
   flex-direction: column;
@@ -147,14 +150,14 @@ main {
 
 /* Media Queries */
 
-@media (width >= 48rem) {
+@media (48rem <= width < 90rem) {
   body {
     padding: var(--40px);
   }
 
   .card {
     padding: var(--40px);
-    max-width: 456px;
+    max-width: var(--456px);
   }
 }
 
@@ -165,6 +168,6 @@ main {
 
   .card {
     padding: var(--40px);
-    max-width: 384px;
+    max-width: var(--384px);
   }
 }
