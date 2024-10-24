@@ -51,9 +51,7 @@ h6 {
   --16px: 1rem;
   --24px: 1.5rem;
   --40px: 2.5rem;
-  --327px: 20.438rem;
   --384px: 24rem;
-  --456px: 28.5rem;
 
   --color-green: hsl(75, 94%, 57%);
   --color-white: hsl(0, 0%, 100%);
@@ -71,28 +69,25 @@ h6 {
 /* Styles */
 
 body {
-  height: 100vh;
-  width: 100vw;
-  padding: 0 var(--24px);
   background-color: var(--color-grey-900);
   font-family: var(--font-family);
   color: var(--color-white);
 }
 
 main {
-  height: 100%;
+  min-height: 100dvh;
   display: flex;
 }
 
 .card {
   margin: auto;
-  max-width: var(--327px);
+  max-width: var(--384px);
   background-color: var(--color-grey-800);
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
-  padding: var(--24px);
+  padding: var(--40px);
   border-radius: 14px;
   gap: var(--24px);
 }
@@ -124,15 +119,23 @@ main {
 
 /* Socials */
 .socials {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-self: stretch;
   gap: var(--16px);
 }
 
 .socials__link {
-  align-self: stretch;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.socials__link > a {
   text-align: center;
   font: var(--text-preset-2-bold);
   background-color: var(--color-grey-700);
@@ -145,42 +148,18 @@ main {
 
 /* hover and focus states
 Referenced from [https://stackoverflow.com/a/28369957] */
-.socials__link:focus {
+.socials__link > a:focus {
   background-color: var(--color-green);
   color: var(--color-grey-700);
   outline: none;
 }
 
-.socials:hover > .socials__link:focus {
+.socials:hover > .socials__link > a:focus {
   background-color: var(--color-grey-700);
   color: var(--color-white);
 }
 
-.socials:hover > .socials__link:hover {
+.socials:hover > .socials__link > a:hover {
   background-color: var(--color-green);
   color: var(--color-grey-700);
-}
-
-/* Media Queries */
-
-@media (48rem <= width < 90rem) {
-  body {
-    padding: var(--40px);
-  }
-
-  .card {
-    padding: var(--40px);
-    max-width: var(--456px);
-  }
-}
-
-@media (width >= 90rem) {
-  body {
-    padding: 0;
-  }
-
-  .card {
-    padding: var(--40px);
-    max-width: var(--384px);
-  }
 }
